@@ -7,34 +7,38 @@ class PostList extends React.Component {
     this.props.fetchPosts();
   }
 
-  constructor(props){
-    super(props);
-    this.state={ count: 0}
+constructor(props){
+  super(props);
+  this.state={ count: 0}
 }
-
+countUpdate(){
+ // this.setState({ count: this.state.count + 1 })
+ return 1;
+}
   renderList() {
-    
     return this.props.posts.map(post => {
+      var rowNumber = this.countUpdate();
       return (
         <tr className="item" key={post.id}>
-        <td> {this.state.count + 1}</td>
+        <td><strong>{post.id - rowNumber}</strong></td>
         <td>{post.title}</td>
         <td>{post.id}</td>
         <td>{post.body}</td>
       </tr>
       );
+      
     });
   }
 
   render() {
     return <div>
-    <Table responsive>
+    <Table responsive bordered>
     <thead>
       <tr>
         <th>#</th>
         <th>Title</th>
-        <th>id</th>
-        <th>Description</th>
+        <th>Id</th>
+        <th>Body</th>
       </tr>
     </thead>
     <tbody>
