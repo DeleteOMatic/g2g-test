@@ -1,26 +1,12 @@
-import React from 'react';
-import './App.css';
-import { connect } from 'react-redux';
-import { increaseCounter, decreaseCounter } from './redux/Counter/counter.actions';
+import React from "react";
+import PostList from "./components/PostList";
 
-function App(props) {
-return (
-   <div className='App'>
-     <div>Count: {props.count}</div>
-     <button onClick={() => props.increaseCounter()}>Increase        Count</button>
-     <button onClick={() => props.decreaseCounter()}>Decrease Count</button>
-  </div>
- );
-}
-const mapStateToProps = (state) => {
-return {
-   count: state.counter.count,
- };
+const App = () => {
+  return (
+    <div className="ui container">
+      <PostList />
+    </div>
+  );
 };
-const mapDispatchToProps = (dispatch) => {
-return {
-   increaseCounter: () => dispatch(increaseCounter()),
-   decreaseCounter: () => dispatch(decreaseCounter()),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default App;
