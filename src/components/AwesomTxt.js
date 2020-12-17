@@ -48,8 +48,7 @@ function reverse(str){
 
 async function solve(){
   // todo
-  const solvetxt = awesome();
-  return solvetxt;
+  return await awesome();
 }
 
 // output
@@ -57,11 +56,12 @@ async function solve(){
     solve().then(function(result){
       // todo
       console.log(result)
+      alert(result);
       return result;
     });
  }
 
-  return <h1> {sentence()}</h1>;
+  return <h1>{sentence()}</h1>;
 }
 
 export default AwesomeTxt;
