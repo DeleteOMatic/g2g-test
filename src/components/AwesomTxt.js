@@ -41,7 +41,7 @@ function AwesomeTxt() {
 function reverse(str){
   // todo 
   const reverseData = JSON.stringify(str[0]);
-  const reverseInput = reverseData.split("").reverse().join(""); //bug
+  const reverseInput = reverseData.split("").reverse().join("");
   const reverseOutput = JSON.parse(reverseInput);
   return reverseOutput; 
 }
