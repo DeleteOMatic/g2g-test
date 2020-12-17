@@ -1,6 +1,7 @@
 import React from "react";
 import { } from 'react-bootstrap';
 
+
 function AwesomeTxt() {
   const input = {
     a: 'I',
@@ -39,9 +40,10 @@ function AwesomeTxt() {
 
 function reverse(str){
   // todo 
-  return str;
-  return str.split("").reverse().join("");
-
+  const reverseData = JSON.stringify(str[0]);
+  const reverseInput = reverseData.split("").reverse().join(""); //bug
+  const reverseOutput = JSON.parse(reverseInput);
+  return reverseOutput; 
 }
 
 async function solve(){
@@ -54,11 +56,12 @@ async function solve(){
  function sentence(){
     solve().then(function(result){
       // todo
-      return console.log(result);
+      console.log(result)
+      return result;
     });
  }
 
-  return <h1>{sentence()}</h1>;
+  return <h1> {sentence()}</h1>;
 }
 
 export default AwesomeTxt;
