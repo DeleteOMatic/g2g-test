@@ -1,6 +1,4 @@
 import React from "react";
-import { } from 'react-bootstrap';
-
 
 function AwesomeTxt() {
   const input = {
@@ -13,6 +11,7 @@ function AwesomeTxt() {
     },
     d: ['repoleved']
   }
+
   function awesome(){
     return new Promise (resolve => {
         setTimeout( () => {
@@ -32,14 +31,14 @@ function AwesomeTxt() {
         }, 1000);
     })
   }
-  /** 
+
+/** 
 * @param str
 * @example
 * @return
 */
 
 function reverse(str){
-  // todo 
   const reverseData = JSON.stringify(str[0]);
   const reverseInput = reverseData.split("").reverse().join("");
   const reverseOutput = JSON.parse(reverseInput);
@@ -47,16 +46,14 @@ function reverse(str){
 }
 
 async function solve(){
-  // todo
   return await awesome();
 }
 
 // output
  function sentence(){
     solve().then(function(result){
-      // todo
       console.log(result)
-      alert(result);
+      //alert(result);
       return result;
     });
  }
